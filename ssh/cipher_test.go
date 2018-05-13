@@ -6,9 +6,11 @@ package ssh
 
 import (
 	"bytes"
-	"crypto"
-	"github.com/benchlab/bench-crypto/rand"
 	"testing"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/rand"
 )
 
 func TestDefaultCiphersExist(t *testing.T) {

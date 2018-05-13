@@ -8,12 +8,14 @@ import (
 	"bufio"
 	"bytes"
 	"compress/gzip"
-	"crypto"
-	"github.com/benchlab/bench-crypto/rand"
 	"encoding/hex"
 	"os"
 	"strings"
 	"testing"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/rand"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/ed25519/internal/edwards25519"
 )

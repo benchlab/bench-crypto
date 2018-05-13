@@ -6,9 +6,6 @@ package packet
 
 import (
 	"bytes"
-	"crypto"
-	"github.com/benchlab/bench-crypto/dsa"
-	"github.com/benchlab/bench-crypto/ecdsa"
 	"encoding/asn1"
 	"encoding/binary"
 	"hash"
@@ -16,6 +13,11 @@ import (
 	"math/big"
 	"strconv"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/s2k"

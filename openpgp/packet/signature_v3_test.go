@@ -6,11 +6,12 @@ package packet
 
 import (
 	"bytes"
-	"crypto"
 	"encoding/hex"
 	"io"
 	"io/ioutil"
 	"testing"
+
+	crypto "github.com/benchlab/bench-crypto"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/armor"
 )

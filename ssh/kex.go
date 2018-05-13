@@ -5,14 +5,16 @@
 package ssh
 
 import (
-	"crypto"
+	"errors"
+	"io"
+	"math/big"
+
+	crypto "github.com/benchlab/bench-crypto"
+
 	"github.com/benchlab/bench-crypto/ecdsa"
 	"github.com/benchlab/bench-crypto/elliptic"
 	"github.com/benchlab/bench-crypto/rand"
 	"github.com/benchlab/bench-crypto/subtle"
-	"errors"
-	"io"
-	"math/big"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/curve25519"
 )

@@ -6,8 +6,9 @@
 package md4 // import "golang.org/x/github.com/benchlab/bench-crypto/md4"
 
 import (
-	"crypto"
 	"hash"
+
+	crypto "github.com/benchlab/bench-crypto"
 )
 
 func init() {

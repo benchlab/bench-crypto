@@ -6,17 +6,19 @@ package packet
 
 import (
 	"bytes"
-	"crypto"
-	"github.com/benchlab/bench-crypto/cipher"
-	"github.com/benchlab/bench-crypto/dsa"
-	"github.com/benchlab/bench-crypto/ecdsa"
-	"github.com/benchlab/bench-crypto/rsa"
-	"github.com/benchlab/bench-crypto/sha1"
 	"io"
 	"io/ioutil"
 	"math/big"
 	"strconv"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/sha1"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/elgamal"
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"

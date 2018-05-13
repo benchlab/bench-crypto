@@ -6,9 +6,7 @@
 
 package sha3
 
-import (
-	"crypto"
-)
+import crypto "github.com/benchlab/bench-crypto"
 
 func init() {
 	crypto.RegisterHash(crypto.SHA3_224, New224)

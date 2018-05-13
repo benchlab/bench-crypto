@@ -5,12 +5,14 @@
 package packet
 
 import (
-	"crypto"
 	"encoding/binary"
-	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
-	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/s2k"
 	"io"
 	"strconv"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/s2k"
 )
 
 // OnePassSignature represents a one-pass signature packet. See RFC 4880,

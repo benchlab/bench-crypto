@@ -6,7 +6,7 @@ package ssh
 
 import (
 	"bytes"
-	"crypto"
+	"github.com/benchlab/bench-crypto"
 	"github.com/benchlab/bench-crypto/dsa"
 	"github.com/benchlab/bench-crypto/ecdsa"
 	"github.com/benchlab/bench-crypto/elliptic"

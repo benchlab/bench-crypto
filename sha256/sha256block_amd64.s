@@ -1,10 +1,10 @@
-// Copyright 2013 The Go Authors. All rights reserved.
+	// Copyright 2013 The Go Authors. All rights reserved.
 	// Use of this source code is governed by a BSD-style
 	// license that can be found in the LICENSE file.
 	
 	#include "textflag.h"
 	
-	// SHA256 chunk routine. See sha256chunk.go for Go equivalent.
+	// SHA256 block routine. See sha256block.go for Go equivalent.
 	//
 	// The algorithm is detailed in FIPS 180-4:
 	//
@@ -550,7 +550,7 @@
 		;                                  \
 		ADDL  y3, h                        // h = t1 + S0 + MAJ					// --
 	
-	TEXT ·chunk(SB), 0, $536-32
+	TEXT ·block(SB), 0, $536-32
 		CMPB ·useAVX2(SB), $1
 		JE   avx2
 	
@@ -673,11 +673,11 @@
 		MOVQ p_base+8(FP), INP
 		MOVQ p_len+16(FP), NUM_BYTES
 	
-		LEAQ -64(INP)(NUM_BYTES*1), NUM_BYTES // Pointer to the last chunk
+		LEAQ -64(INP)(NUM_BYTES*1), NUM_BYTES // Pointer to the last block
 		MOVQ NUM_BYTES, _INP_END(SP)
 	
 		CMPQ NUM_BYTES, INP
-		JE   avx2_only_one_chunk
+		JE   avx2_only_one_block
 	
 		// Load initial digest
 		MOVL 0(CTX), a  // a = H0
@@ -689,7 +689,7 @@
 		MOVL 24(CTX), g // g = H6
 		MOVL 28(CTX), h // h = H7
 	
-	avx2_loop0: // at each iteration works with one chunk (512 bit)
+	avx2_loop0: // at each iteration works with one block (512 bit)
 	
 		VMOVDQU (0*32)(INP), XTMP0
 		VMOVDQU (1*32)(INP), XTMP1
@@ -712,7 +712,7 @@
 	
 		MOVQ $K256<>(SB), TBL // Loading address of table with round-specific constants
 	
-	avx2_last_chunk_enter:
+	avx2_last_block_enter:
 		ADDQ $64, INP
 		MOVQ INP, _INP(SP)
 		XORQ SRND, SRND
@@ -795,7 +795,7 @@
 	
 		XORQ SRND, SRND
 	
-	avx2_loop3: // Do second chunk using previously scheduled results
+	avx2_loop3: // Do second block using previously scheduled results
 		DO_ROUND_N_0(_XFER + 0*32 + 16, a, b, c, d, e, f, g, h, a)
 		DO_ROUND_N_1(_XFER + 0*32 + 16, h, a, b, c, d, e, f, g, h)
 		DO_ROUND_N_2(_XFER + 0*32 + 16, g, h, a, b, c, d, e, f, g)
@@ -827,7 +827,7 @@
 		JA   avx2_loop0
 		JB   done_hash
 	
-	avx2_do_last_chunk:
+	avx2_do_last_block:
 	
 		VMOVDQU 0(INP), XWORD0
 		VMOVDQU 16(INP), XWORD1
@@ -843,9 +843,9 @@
 	
 		MOVQ $K256<>(SB), TBL
 	
-		JMP avx2_last_chunk_enter
+		JMP avx2_last_block_enter
 	
-	avx2_only_one_chunk:
+	avx2_only_one_block:
 		// Load initial digest
 		MOVL 0(CTX), a  // a = H0
 		MOVL 4(CTX), b  // b = H1
@@ -856,7 +856,7 @@
 		MOVL 24(CTX), g // g = H6
 		MOVL 28(CTX), h // h = H7
 	
-		JMP avx2_do_last_chunk
+		JMP avx2_do_last_block
 	
 	done_hash:
 		VZEROUPPER

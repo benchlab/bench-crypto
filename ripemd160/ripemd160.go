@@ -10,8 +10,9 @@ package ripemd160 // import "golang.org/x/github.com/benchlab/bench-crypto/ripem
 // http://homes.esat.kuleuven.be/~cosicart/pdf/AB-9601/AB-9601.pdf.
 
 import (
-	"crypto"
 	"hash"
+
+	crypto "github.com/benchlab/bench-crypto"
 )
 
 func init() {

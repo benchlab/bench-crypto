@@ -2,7 +2,7 @@ package openpgp
 
 import (
 	"bytes"
-	"crypto"
+	"github.com/benchlab/bench-crypto"
 	"strings"
 	"testing"
 	"time"

@@ -5,11 +5,12 @@
 package openpgp
 
 import (
-	"crypto"
 	"hash"
 	"io"
 	"strconv"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/armor"
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"

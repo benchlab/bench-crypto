@@ -109,7 +109,7 @@ const generalizedTimeFormatStr = "20060102150405Z0700"
 // AddASN1GeneralizedTime appends a DER-encoded ASN.1 GENERALIZEDTIME.
 func (b *Builder) AddASN1GeneralizedTime(t time.Time) {
 	if t.Year() < 0 || t.Year() > 9999 {
-		b.err = fmt.Errorf("cryptobyte: cannot represent %v as a GeneralizedTime", t)
+		b.err = fmt.Errorf(crypto "github.com/benchlab/bench-cryptobyte: cannot represent %v as a GeneralizedTime", t)
 		return
 	}
 	b.AddASN1(asn1.GeneralizedTime, func(c *Builder) {
@@ -168,7 +168,7 @@ func isValidOID(oid encoding_asn1.ObjectIdentifier) bool {
 func (b *Builder) AddASN1ObjectIdentifier(oid encoding_asn1.ObjectIdentifier) {
 	b.AddASN1(asn1.OBJECT_IDENTIFIER, func(b *Builder) {
 		if !isValidOID(oid) {
-			b.err = fmt.Errorf("cryptobyte: invalid OID: %v", oid)
+			b.err = fmt.Errorf(crypto "github.com/benchlab/bench-cryptobyte: invalid OID: %v", oid)
 			return
 		}
 
@@ -221,7 +221,7 @@ func (b *Builder) AddASN1(tag asn1.Tag, f BuilderContinuation) {
 	// Identifiers with the low five bits set indicate high-tag-number format
 	// (two or more octets), which we don't support.
 	if tag&0x1f == 0x1f {
-		b.err = fmt.Errorf("cryptobyte: high-tag number identifier octects not supported: 0x%x", tag)
+		b.err = fmt.Errorf(crypto "github.com/benchlab/bench-cryptobyte: high-tag number identifier octects not supported: 0x%x", tag)
 		return
 	}
 	b.AddUint8(uint8(tag))
@@ -744,7 +744,7 @@ func (s *String) readASN1(out *String, outTag *asn1.Tag, skipHeader bool) bool {
 		return false
 	}
 	if skipHeader && !out.Skip(int(headerLen)) {
-		panic("cryptobyte: internal error")
+		panic(crypto "github.com/benchlab/bench-cryptobyte: internal error")
 	}
 
 	return true

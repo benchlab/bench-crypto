@@ -16,7 +16,7 @@ package acme
 import (
 	"bytes"
 	"context"
-	"crypto"
+	"github.com/benchlab/bench-crypto"
 	"github.com/benchlab/bench-crypto/ecdsa"
 	"github.com/benchlab/bench-crypto/elliptic"
 	"github.com/benchlab/bench-crypto/rand"

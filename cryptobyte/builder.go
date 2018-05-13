@@ -193,7 +193,7 @@ func (b *Builder) addLengthPrefixed(lenLen int, isASN1 bool, f BuilderContinuati
 	b.callContinuation(f, b.child)
 	b.flushChild()
 	if b.child != nil {
-		panic("cryptobyte: internal error")
+		panic(crypto "github.com/benchlab/bench-cryptobyte: internal error")
 	}
 }
 
@@ -213,7 +213,7 @@ func (b *Builder) flushChild() {
 	length := len(child.result) - child.pendingLenLen - child.offset
 
 	if length < 0 {
-		panic("cryptobyte: internal error") // result unexpectedly shrunk
+		panic(crypto "github.com/benchlab/bench-cryptobyte: internal error") // result unexpectedly shrunk
 	}
 
 	if child.pendingIsASN1 {
@@ -221,7 +221,7 @@ func (b *Builder) flushChild() {
 		// to be incorrect, we have to move the contents along in order to make
 		// space.
 		if child.pendingLenLen != 1 {
-			panic("cryptobyte: internal error")
+			panic(crypto "github.com/benchlab/bench-cryptobyte: internal error")
 		}
 		var lenLen, lenByte uint8
 		if int64(length) > 0xfffffffe {
@@ -264,7 +264,7 @@ func (b *Builder) flushChild() {
 		l >>= 8
 	}
 	if l != 0 {
-		b.err = fmt.Errorf("cryptobyte: pending child length %d exceeds %d-byte length prefix", length, child.pendingLenLen)
+		b.err = fmt.Errorf(crypto "github.com/benchlab/bench-cryptobyte: pending child length %d exceeds %d-byte length prefix", length, child.pendingLenLen)
 		return
 	}
 
@@ -281,10 +281,10 @@ func (b *Builder) add(bytes ...byte) {
 		panic("attempted write while child is pending")
 	}
 	if len(b.result)+len(bytes) < len(bytes) {
-		b.err = errors.New("cryptobyte: length overflow")
+		b.err = errors.New(crypto "github.com/benchlab/bench-cryptobyte: length overflow")
 	}
 	if b.fixedSize && len(b.result)+len(bytes) > cap(b.result) {
-		b.err = errors.New("cryptobyte: Builder is exceeding its fixed-size buffer")
+		b.err = errors.New(crypto "github.com/benchlab/bench-cryptobyte: Builder is exceeding its fixed-size buffer")
 		return
 	}
 	b.result = append(b.result, bytes...)

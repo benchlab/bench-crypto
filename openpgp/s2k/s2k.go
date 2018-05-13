@@ -7,10 +7,11 @@
 package s2k // import "golang.org/x/github.com/benchlab/bench-crypto/openpgp/s2k"
 
 import (
-	"crypto"
 	"hash"
 	"io"
 	"strconv"
+
+	crypto "github.com/benchlab/bench-crypto"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 )

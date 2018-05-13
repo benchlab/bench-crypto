@@ -12,11 +12,12 @@ package clearsign // import "golang.org/x/github.com/benchlab/bench-crypto/openp
 import (
 	"bufio"
 	"bytes"
-	"crypto"
 	"hash"
 	"io"
 	"net/textproto"
 	"strconv"
+
+	crypto "github.com/benchlab/bench-crypto"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/armor"
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"

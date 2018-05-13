@@ -5,16 +5,18 @@
 package acme
 
 import (
-	"crypto"
+	"encoding/base64"
+	"encoding/json"
+	"fmt"
+	"math/big"
+
+	crypto "github.com/benchlab/bench-crypto"
+
 	"github.com/benchlab/bench-crypto/ecdsa"
 	"github.com/benchlab/bench-crypto/rand"
 	"github.com/benchlab/bench-crypto/rsa"
 	"github.com/benchlab/bench-crypto/sha256"
 	_ "github.com/benchlab/bench-crypto/sha512" // need for EC keys
-	"encoding/base64"
-	"encoding/json"
-	"fmt"
-	"math/big"
 )
 
 // jwsEncodeJSON signs claimset using provided key and a nonce.

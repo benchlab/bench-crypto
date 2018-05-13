@@ -5,10 +5,12 @@
 package packet
 
 import (
-	"crypto"
-	"github.com/benchlab/bench-crypto/rand"
 	"io"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/rand"
 )
 
 // Config collects a number of parameters along with sensible defaults.

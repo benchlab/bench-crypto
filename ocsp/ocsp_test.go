@@ -8,7 +8,7 @@ package ocsp
 
 import (
 	"bytes"
-	"crypto"
+	"github.com/benchlab/bench-crypto"
 	"github.com/benchlab/bench-crypto/sha1"
 	"github.com/benchlab/bench-crypto/x509"
 	"github.com/benchlab/bench-crypto/x509/pkix"
@@ -249,10 +249,10 @@ func TestOCSPResponse(t *testing.T) {
 		issuerHash crypto.Hash
 	}{
 		{"Zero value", 0},
-		{"crypto.SHA1", crypto.SHA1},
-		{"crypto.SHA256", crypto.SHA256},
-		{"crypto.SHA384", crypto.SHA384},
-		{"crypto.SHA512", crypto.SHA512},
+		{"github.com/benchlab/bench-crypto.SHA1", crypto.SHA1},
+		{"github.com/benchlab/bench-crypto.SHA256", crypto.SHA256},
+		{"github.com/benchlab/bench-crypto.SHA384", crypto.SHA384},
+		{"github.com/benchlab/bench-crypto.SHA512", crypto.SHA512},
 	}
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {

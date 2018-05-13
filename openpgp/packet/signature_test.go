@@ -6,9 +6,10 @@ package packet
 
 import (
 	"bytes"
-	"crypto"
 	"encoding/hex"
 	"testing"
+
+	crypto "github.com/benchlab/bench-crypto"
 )
 
 func TestSignatureRead(t *testing.T) {

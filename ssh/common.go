@@ -5,12 +5,14 @@
 package ssh
 
 import (
-	"crypto"
-	"github.com/benchlab/bench-crypto/rand"
 	"fmt"
 	"io"
 	"math"
 	"sync"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/rand"
 
 	_ "github.com/benchlab/bench-crypto/sha1"
 	_ "github.com/benchlab/bench-crypto/sha256"

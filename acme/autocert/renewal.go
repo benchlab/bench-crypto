@@ -6,9 +6,10 @@ package autocert
 
 import (
 	"context"
-	"crypto"
 	"sync"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
 )
 
 // renewJitter is the maximum deviation from Manager.RenewBefore.

@@ -6,17 +6,19 @@ package packet
 
 import (
 	"bytes"
-	"crypto"
-	"github.com/benchlab/bench-crypto/ecdsa"
-	"github.com/benchlab/bench-crypto/elliptic"
-	"github.com/benchlab/bench-crypto/rand"
-	"github.com/benchlab/bench-crypto/rsa"
-	"github.com/benchlab/bench-crypto/x509"
 	"encoding/hex"
 	"hash"
 	"io"
 	"testing"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/x509"
 )
 
 var privateKeyTests = []struct {

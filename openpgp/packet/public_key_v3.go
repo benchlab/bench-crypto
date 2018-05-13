@@ -5,9 +5,6 @@
 package packet
 
 import (
-	"crypto"
-	"github.com/benchlab/bench-crypto/md5"
-	"github.com/benchlab/bench-crypto/rsa"
 	"encoding/binary"
 	"fmt"
 	"hash"
@@ -15,6 +12,11 @@ import (
 	"math/big"
 	"strconv"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/md5"
+	"github.com/benchlab/bench-crypto/rsa"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 )

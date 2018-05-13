@@ -7,9 +7,10 @@
 package sha256
 
 import (
-	"crypto"
 	"errors"
 	"hash"
+
+	crypto "github.com/benchlab/bench-crypto"
 )
 
 func init() {

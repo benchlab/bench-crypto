@@ -6,11 +6,13 @@
 package openpgp // import "golang.org/x/github.com/benchlab/bench-crypto/openpgp"
 
 import (
-	"crypto"
-	_ "github.com/benchlab/bench-crypto/sha256"
 	"hash"
 	"io"
 	"strconv"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	_ "github.com/benchlab/bench-crypto/sha256"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/armor"
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"

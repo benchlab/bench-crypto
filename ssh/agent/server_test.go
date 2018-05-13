@@ -5,13 +5,15 @@
 package agent
 
 import (
-	"crypto"
-	"github.com/benchlab/bench-crypto/rand"
 	"fmt"
 	pseudorand "math/rand"
 	"reflect"
 	"strings"
 	"testing"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/rand"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
 )

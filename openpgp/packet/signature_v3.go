@@ -5,12 +5,13 @@
 package packet
 
 import (
-	"crypto"
 	"encoding/binary"
 	"fmt"
 	"io"
 	"strconv"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/s2k"

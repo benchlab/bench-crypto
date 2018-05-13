@@ -5,13 +5,15 @@
 package acme
 
 import (
-	"crypto"
-	"github.com/benchlab/bench-crypto/x509"
 	"errors"
 	"fmt"
 	"net/http"
 	"strings"
 	"time"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	"github.com/benchlab/bench-crypto/x509"
 )
 
 // ACME server response statuses used to describe Authorization and Challenge states.

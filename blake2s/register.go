@@ -7,8 +7,9 @@
 package blake2s
 
 import (
-	"crypto"
 	"hash"
+
+	crypto "github.com/benchlab/bench-crypto"
 )
 
 func init() {

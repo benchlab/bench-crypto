@@ -14,12 +14,14 @@ package ed25519
 
 import (
 	"bytes"
-	"crypto"
-	cryptorand "github.com/benchlab/bench-crypto/rand"
-	"github.com/benchlab/bench-crypto/sha512"
 	"errors"
 	"io"
 	"strconv"
+
+	crypto "github.com/benchlab/bench-crypto"
+
+	cryptorand "github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/sha512"
 
 	"golang.org/x/github.com/benchlab/bench-crypto/ed25519/internal/edwards25519"
 )
