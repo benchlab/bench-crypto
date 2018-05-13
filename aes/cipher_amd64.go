@@ -6,7 +6,7 @@ package aes
 
 import (
 	"github.com/benchlab/bench-crypto/cipher"
-	"github.com/benchlab/bench-crypto/internal/cipherhw"
+	"github.com/benchlab/bench-crypto/int/cipherhw"
 )
 
 // defined in asm_amd64.s
