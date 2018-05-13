@@ -6,7 +6,7 @@ package packet
 
 import (
 	"crypto"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"io"
 	"time"
 )
@@ -15,7 +15,7 @@ import (
 // A nil *Config is valid and results in all default values.
 type Config struct {
 	// Rand provides the source of entropy.
-	// If nil, the crypto/rand Reader is used.
+	// If nil, the github.com/benchlab/bench-crypto/rand Reader is used.
 	Rand io.Reader
 	// DefaultHash is the default hash function to be used.
 	// If zero, SHA-256 is used.

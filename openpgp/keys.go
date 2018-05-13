@@ -5,13 +5,13 @@
 package openpgp
 
 import (
-	"crypto/rsa"
+	"github.com/benchlab/bench-crypto/rsa"
 	"io"
 	"time"
 
-	"golang.org/x/crypto/openpgp/armor"
-	"golang.org/x/crypto/openpgp/errors"
-	"golang.org/x/crypto/openpgp/packet"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/armor"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/packet"
 )
 
 // PublicKeyType is the armor type for a PGP public key.

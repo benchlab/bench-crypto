@@ -5,9 +5,9 @@
 package pkcs12
 
 import (
-	"crypto/hmac"
-	"crypto/sha1"
-	"crypto/x509/pkix"
+	"github.com/benchlab/bench-crypto/hmac"
+	"github.com/benchlab/bench-crypto/sha1"
+	"github.com/benchlab/bench-crypto/x509/pkix"
 	"encoding/asn1"
 )
 

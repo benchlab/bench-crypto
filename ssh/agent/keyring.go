@@ -6,14 +6,14 @@ package agent
 
 import (
 	"bytes"
-	"crypto/rand"
-	"crypto/subtle"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/subtle"
 	"errors"
 	"fmt"
 	"sync"
 	"time"
 
-	"golang.org/x/crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
 )
 
 type privKey struct {

@@ -6,13 +6,13 @@ package pkcs12
 
 import (
 	"bytes"
-	"crypto/cipher"
-	"crypto/des"
-	"crypto/x509/pkix"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/des"
+	"github.com/benchlab/bench-crypto/x509/pkix"
 	"encoding/asn1"
 	"errors"
 
-	"golang.org/x/crypto/pkcs12/internal/rc2"
+	"golang.org/x/github.com/benchlab/bench-crypto/pkcs12/internal/rc2"
 )
 
 var (

@@ -8,10 +8,10 @@ package test
 
 import (
 	"bytes"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"testing"
 
-	"golang.org/x/crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
 )
 
 // Test both logging in with a cert, and also that the certificate presented by an OpenSSH host can be validated correctly

@@ -19,10 +19,10 @@
 //
 // (Note: this package does not implement ciphertext-stealing so sectors must
 // be a multiple of 16 bytes.)
-package xts // import "golang.org/x/crypto/xts"
+package xts // import "golang.org/x/github.com/benchlab/bench-crypto/xts"
 
 import (
-	"crypto/cipher"
+	"github.com/benchlab/bench-crypto/cipher"
 	"encoding/binary"
 	"errors"
 )

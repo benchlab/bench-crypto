@@ -7,7 +7,7 @@
 package chacha20
 
 import (
-	"crypto/cipher"
+	"github.com/benchlab/bench-crypto/cipher"
 	"encoding/binary"
 )
 

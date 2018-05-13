@@ -6,7 +6,7 @@ package agent
 
 import (
 	"bytes"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"errors"
 	"net"
 	"os"
@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
 )
 
 // startOpenSSHAgent executes ssh-agent, and returns an Agent interface to it.

@@ -32,14 +32,14 @@ chunk size.
 
 This package is interoperable with NaCl: https://nacl.cr.yp.to/box.html.
 */
-package box // import "golang.org/x/crypto/nacl/box"
+package box // import "golang.org/x/github.com/benchlab/bench-crypto/nacl/box"
 
 import (
 	"io"
 
-	"golang.org/x/crypto/curve25519"
-	"golang.org/x/crypto/nacl/secretbox"
-	"golang.org/x/crypto/salsa20/salsa"
+	"golang.org/x/github.com/benchlab/bench-crypto/curve25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/nacl/secretbox"
+	"golang.org/x/github.com/benchlab/bench-crypto/salsa20/salsa"
 )
 
 // Overhead is the number of bytes of overhead when boxing a message.

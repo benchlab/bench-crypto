@@ -10,11 +10,11 @@
 // This form of ElGamal embeds PKCS#1 v1.5 padding, which may make it
 // unsuitable for other protocols. RSA should be used in preference in any
 // case.
-package elgamal // import "golang.org/x/crypto/openpgp/elgamal"
+package elgamal // import "golang.org/x/github.com/benchlab/bench-crypto/openpgp/elgamal"
 
 import (
-	"crypto/rand"
-	"crypto/subtle"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/subtle"
 	"errors"
 	"io"
 	"math/big"

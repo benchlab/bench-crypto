@@ -9,13 +9,13 @@ import (
 	"bytes"
 	"compress/gzip"
 	"crypto"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"encoding/hex"
 	"os"
 	"strings"
 	"testing"
 
-	"golang.org/x/crypto/ed25519/internal/edwards25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/ed25519/internal/edwards25519"
 )
 
 type zeroReader struct{}

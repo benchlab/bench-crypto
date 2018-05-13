@@ -7,7 +7,7 @@ package ssh
 // Key exchange tests.
 
 import (
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"reflect"
 	"testing"
 )

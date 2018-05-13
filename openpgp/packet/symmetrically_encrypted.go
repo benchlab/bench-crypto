@@ -5,10 +5,10 @@
 package packet
 
 import (
-	"crypto/cipher"
-	"crypto/sha1"
-	"crypto/subtle"
-	"golang.org/x/crypto/openpgp/errors"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/sha1"
+	"github.com/benchlab/bench-crypto/subtle"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 	"hash"
 	"io"
 	"strconv"

@@ -6,7 +6,7 @@ package sign
 
 import (
 	"bytes"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"encoding/hex"
 	"testing"
 )

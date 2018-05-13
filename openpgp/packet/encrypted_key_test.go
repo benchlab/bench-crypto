@@ -6,7 +6,7 @@ package packet
 
 import (
 	"bytes"
-	"crypto/rsa"
+	"github.com/benchlab/bench-crypto/rsa"
 	"encoding/hex"
 	"fmt"
 	"math/big"

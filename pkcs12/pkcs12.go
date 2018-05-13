@@ -6,14 +6,14 @@
 //
 // This implementation is distilled from https://tools.ietf.org/html/rfc7292
 // and referenced documents. It is intended for decoding P12/PFX-stored
-// certificates and keys for use with the crypto/tls package.
+// certificates and keys for use with the github.com/benchlab/bench-crypto/tls package.
 package pkcs12
 
 import (
-	"crypto/ecdsa"
-	"crypto/rsa"
-	"crypto/x509"
-	"crypto/x509/pkix"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/x509"
+	"github.com/benchlab/bench-crypto/x509/pkix"
 	"encoding/asn1"
 	"encoding/hex"
 	"encoding/pem"

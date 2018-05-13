@@ -5,14 +5,14 @@
 package packet
 
 import (
-	"crypto/rsa"
+	"github.com/benchlab/bench-crypto/rsa"
 	"encoding/binary"
 	"io"
 	"math/big"
 	"strconv"
 
-	"golang.org/x/crypto/openpgp/elgamal"
-	"golang.org/x/crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/elgamal"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 )
 
 const encryptedKeyVersion = 3

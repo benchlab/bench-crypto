@@ -240,7 +240,7 @@ func (e *gfP6) Square(a *gfP6, pool *bnPool) *gfP6 {
 
 func (e *gfP6) Invert(a *gfP6, pool *bnPool) *gfP6 {
 	// See "Implementing cryptographic pairings", M. Scott, section 3.2.
-	// ftp://136.206.11.249/pub/crypto/pairings.pdf
+	// ftp://136.206.11.249/pub/github.com/benchlab/bench-crypto/pairings.pdf
 
 	// Here we can give a short explanation of how it works: let j be a cubic root of
 	// unity in GF(p²) so that 1+j+j²=0.

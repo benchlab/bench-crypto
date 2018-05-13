@@ -7,15 +7,15 @@ package s2k
 import (
 	"bytes"
 	"crypto"
-	_ "crypto/md5"
-	"crypto/rand"
-	"crypto/sha1"
-	_ "crypto/sha256"
-	_ "crypto/sha512"
+	_ "github.com/benchlab/bench-crypto/md5"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/sha1"
+	_ "github.com/benchlab/bench-crypto/sha256"
+	_ "github.com/benchlab/bench-crypto/sha512"
 	"encoding/hex"
 	"testing"
 
-	_ "golang.org/x/crypto/ripemd160"
+	_ "golang.org/x/github.com/benchlab/bench-crypto/ripemd160"
 )
 
 var saltedTests = []struct {

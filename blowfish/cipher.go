@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 // Package blowfish implements Bruce Schneier's Blowfish encryption algorithm.
-package blowfish // import "golang.org/x/crypto/blowfish"
+package blowfish // import "golang.org/x/github.com/benchlab/bench-crypto/blowfish"
 
 // The code is a port of Bruce Schneier's C implementation.
 // See https://www.schneier.com/blowfish.html.
@@ -22,7 +22,7 @@ type Cipher struct {
 type KeySizeError int
 
 func (k KeySizeError) Error() string {
-	return "crypto/blowfish: invalid key size " + strconv.Itoa(int(k))
+	return "github.com/benchlab/bench-crypto/blowfish: invalid key size " + strconv.Itoa(int(k))
 }
 
 // NewCipher creates and returns a Cipher.
@@ -56,14 +56,14 @@ func NewSaltedCipher(key, salt []byte) (*Cipher, error) {
 
 // ChunkSize returns the Blowfish chunk size, 8 bytes.
 // It is necessary to satisfy the Chunk interface in the
-// package "crypto/cipher".
+// package "github.com/benchlab/bench-crypto/cipher".
 func (c *Cipher) ChunkSize() int { return ChunkSize }
 
 // Encrypt encrypts the 8-byte buffer src using the key k
 // and stores the result in dst.
 // Note that for amounts of data larger than a chunk,
 // it is not safe to just call Encrypt on successive chunks;
-// instead, use an encryption mode like CBC (see crypto/cipher/cbc.go).
+// instead, use an encryption mode like CBC (see github.com/benchlab/bench-crypto/cipher/cbc.go).
 func (c *Cipher) Encrypt(dst, src []byte) {
 	l := uint32(src[0])<<24 | uint32(src[1])<<16 | uint32(src[2])<<8 | uint32(src[3])
 	r := uint32(src[4])<<24 | uint32(src[5])<<16 | uint32(src[6])<<8 | uint32(src[7])

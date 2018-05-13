@@ -8,7 +8,7 @@
 package tea
 
 import (
-	"crypto/cipher"
+	"github.com/benchlab/bench-crypto/cipher"
 	"encoding/binary"
 	"errors"
 )
@@ -60,7 +60,7 @@ func NewCipherWithRounds(key []byte, rounds int) (cipher.Chunk, error) {
 }
 
 // ChunkSize returns the TEA chunk size, which is eight bytes. It is necessary
-// to satisfy the Chunk interface in the package "crypto/cipher".
+// to satisfy the Chunk interface in the package "github.com/benchlab/bench-crypto/cipher".
 func (*tea) ChunkSize() int {
 	return ChunkSize
 }
@@ -68,7 +68,7 @@ func (*tea) ChunkSize() int {
 // Encrypt encrypts the 8 byte buffer src using the key in t and stores the
 // result in dst. Note that for amounts of data larger than a chunk, it is not
 // safe to just call Encrypt on successive chunks; instead, use an encryption
-// mode like CBC (see crypto/cipher/cbc.go).
+// mode like CBC (see github.com/benchlab/bench-crypto/cipher/cbc.go).
 func (t *tea) Encrypt(dst, src []byte) {
 	e := binary.BigEndian
 	v0, v1 := e.Uint32(src), e.Uint32(src[4:])

@@ -4,18 +4,18 @@
 
 // Package bcrypt implements Provos and Mazières's bcrypt adaptive hashing
 // algorithm. See http://www.usenix.org/event/usenix99/provos/provos.pdf
-package bcrypt // import "golang.org/x/crypto/bcrypt"
+package bcrypt // import "golang.org/x/github.com/benchlab/bench-crypto/bcrypt"
 
 // The code is a port of Provos and Mazières's C implementation.
 import (
-	"crypto/rand"
-	"crypto/subtle"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/subtle"
 	"errors"
 	"fmt"
 	"io"
 	"strconv"
 
-	"golang.org/x/crypto/blowfish"
+	"golang.org/x/github.com/benchlab/bench-crypto/blowfish"
 )
 
 const (
@@ -26,31 +26,31 @@ const (
 
 // The error returned from CompareHashAndPassword when a password and hash do
 // not match.
-var ErrMismatchedHashAndPassword = errors.New("crypto/bcrypt: hashedPassword is not the hash of the given password")
+var ErrMismatchedHashAndPassword = errors.New("github.com/benchlab/bench-crypto/bcrypt: hashedPassword is not the hash of the given password")
 
 // The error returned from CompareHashAndPassword when a hash is too short to
 // be a bcrypt hash.
-var ErrHashTooShort = errors.New("crypto/bcrypt: hashedSecret too short to be a bcrypted password")
+var ErrHashTooShort = errors.New("github.com/benchlab/bench-crypto/bcrypt: hashedSecret too short to be a bcrypted password")
 
 // The error returned from CompareHashAndPassword when a hash was created with
 // a bcrypt algorithm newer than this implementation.
 type HashVersionTooNewError byte
 
 func (hv HashVersionTooNewError) Error() string {
-	return fmt.Sprintf("crypto/bcrypt: bcrypt algorithm version '%c' requested is newer than current version '%c'", byte(hv), majorVersion)
+	return fmt.Sprintf("github.com/benchlab/bench-crypto/bcrypt: bcrypt algorithm version '%c' requested is newer than current version '%c'", byte(hv), majorVersion)
 }
 
 // The error returned from CompareHashAndPassword when a hash starts with something other than '$'
 type InvalidHashPrefixError byte
 
 func (ih InvalidHashPrefixError) Error() string {
-	return fmt.Sprintf("crypto/bcrypt: bcrypt hashes must start with '$', but hashedSecret started with '%c'", byte(ih))
+	return fmt.Sprintf("github.com/benchlab/bench-crypto/bcrypt: bcrypt hashes must start with '$', but hashedSecret started with '%c'", byte(ih))
 }
 
 type InvalidCostError int
 
 func (ic InvalidCostError) Error() string {
-	return fmt.Sprintf("crypto/bcrypt: cost %d is outside allowed range (%d,%d)", int(ic), int(MinCost), int(MaxCost))
+	return fmt.Sprintf("github.com/benchlab/bench-crypto/bcrypt: cost %d is outside allowed range (%d,%d)", int(ic), int(MinCost), int(MaxCost))
 }
 
 const (

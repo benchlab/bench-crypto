@@ -4,18 +4,18 @@
 
 // Package otr implements the Off The Record protocol as specified in
 // http://www.cypherpunks.ca/otr/Protocol-v2-3.1.0.html
-package otr // import "golang.org/x/crypto/otr"
+package otr // import "golang.org/x/github.com/benchlab/bench-crypto/otr"
 
 import (
 	"bytes"
-	"crypto/aes"
-	"crypto/cipher"
-	"crypto/dsa"
-	"crypto/hmac"
-	"crypto/rand"
-	"crypto/sha1"
-	"crypto/sha256"
-	"crypto/subtle"
+	"github.com/benchlab/bench-crypto/aes"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/hmac"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/sha1"
+	"github.com/benchlab/bench-crypto/sha256"
+	"github.com/benchlab/bench-crypto/subtle"
 	"encoding/base64"
 	"encoding/hex"
 	"errors"
@@ -166,7 +166,7 @@ type Conversation struct {
 	PrivateKey *PrivateKey
 
 	// Rand can be set to override the entropy source. Otherwise,
-	// crypto/rand will be used.
+	// github.com/benchlab/bench-crypto/rand will be used.
 	Rand io.Reader
 	// If FragmentSize is set, all messages produced by Receive and Send
 	// will be fragmented into messages of, at most, this number of bytes.

@@ -6,9 +6,9 @@ package packet
 
 import (
 	"bytes"
-	"crypto/sha1"
+	"github.com/benchlab/bench-crypto/sha1"
 	"encoding/hex"
-	"golang.org/x/crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 	"io"
 	"io/ioutil"
 	"testing"

@@ -4,7 +4,7 @@
 
 // Package xtea implements XTEA encryption, as defined in Needham and Wheeler's
 // 1997 technical report, "Tea extensions."
-package xtea // import "golang.org/x/crypto/xtea"
+package xtea // import "golang.org/x/github.com/benchlab/bench-crypto/xtea"
 
 // For details, see http://www.cix.co.uk/~klockstone/xtea.pdf
 
@@ -22,7 +22,7 @@ type Cipher struct {
 type KeySizeError int
 
 func (k KeySizeError) Error() string {
-	return "crypto/xtea: invalid key size " + strconv.Itoa(int(k))
+	return "github.com/benchlab/bench-crypto/xtea: invalid key size " + strconv.Itoa(int(k))
 }
 
 // NewCipher creates and returns a new Cipher.
@@ -45,13 +45,13 @@ func NewCipher(key []byte) (*Cipher, error) {
 
 // ChunkSize returns the XTEA chunk size, 8 bytes.
 // It is necessary to satisfy the Chunk interface in the
-// package "crypto/cipher".
+// package "github.com/benchlab/bench-crypto/cipher".
 func (c *Cipher) ChunkSize() int { return ChunkSize }
 
 // Encrypt encrypts the 8 byte buffer src using the key and stores the result in dst.
 // Note that for amounts of data larger than a chunk,
 // it is not safe to just call Encrypt on successive chunks;
-// instead, use an encryption mode like CBC (see crypto/cipher/cbc.go).
+// instead, use an encryption mode like CBC (see github.com/benchlab/bench-crypto/cipher/cbc.go).
 func (c *Cipher) Encrypt(dst, src []byte) { encryptChunk(c, dst, src) }
 
 // Decrypt decrypts the 8 byte buffer src using the key and stores the result in dst.

@@ -194,7 +194,7 @@ func (e *gfP2) Square(a *gfP2, pool *bnPool) *gfP2 {
 
 func (e *gfP2) Invert(a *gfP2, pool *bnPool) *gfP2 {
 	// See "Implementing cryptographic pairings", M. Scott, section 3.2.
-	// ftp://136.206.11.249/pub/crypto/pairings.pdf
+	// ftp://136.206.11.249/pub/github.com/benchlab/bench-crypto/pairings.pdf
 	t := pool.Get()
 	t.Mul(a.y, a.y)
 	t2 := pool.Get()

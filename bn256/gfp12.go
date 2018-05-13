@@ -179,7 +179,7 @@ func (e *gfP12) Square(a *gfP12, pool *bnPool) *gfP12 {
 
 func (e *gfP12) Invert(a *gfP12, pool *bnPool) *gfP12 {
 	// See "Implementing cryptographic pairings", M. Scott, section 3.2.
-	// ftp://136.206.11.249/pub/crypto/pairings.pdf
+	// ftp://136.206.11.249/pub/github.com/benchlab/bench-crypto/pairings.pdf
 	t1 := newGFp6(pool)
 	t2 := newGFp6(pool)
 

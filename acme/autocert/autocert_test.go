@@ -7,13 +7,13 @@ package autocert
 import (
 	"context"
 	"crypto"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rand"
-	"crypto/rsa"
-	"crypto/tls"
-	"crypto/x509"
-	"crypto/x509/pkix"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/tls"
+	"github.com/benchlab/bench-crypto/x509"
+	"github.com/benchlab/bench-crypto/x509/pkix"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
@@ -28,7 +28,7 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/crypto/acme"
+	"golang.org/x/github.com/benchlab/bench-crypto/acme"
 )
 
 var discoTmpl = template.Must(template.New("disco").Parse(`{

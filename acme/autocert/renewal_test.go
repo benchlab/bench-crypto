@@ -6,11 +6,11 @@ package autocert
 
 import (
 	"context"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rand"
-	"crypto/tls"
-	"crypto/x509"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/tls"
+	"github.com/benchlab/bench-crypto/x509"
 	"encoding/base64"
 	"fmt"
 	"net/http"
@@ -18,7 +18,7 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/crypto/acme"
+	"golang.org/x/github.com/benchlab/bench-crypto/acme"
 )
 
 func TestRenewalNext(t *testing.T) {

@@ -10,7 +10,7 @@ package test
 
 import (
 	"bytes"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"encoding/base64"
 	"fmt"
 	"io/ioutil"
@@ -23,8 +23,8 @@ import (
 	"testing"
 	"text/template"
 
-	"golang.org/x/crypto/ssh"
-	"golang.org/x/crypto/ssh/testdata"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh/testdata"
 )
 
 const (

@@ -8,7 +8,7 @@ package ssh
 
 import (
 	"bytes"
-	crypto_rand "crypto/rand"
+	crypto_rand "github.com/benchlab/bench-crypto/rand"
 	"errors"
 	"io"
 	"io/ioutil"
@@ -16,7 +16,7 @@ import (
 	"net"
 	"testing"
 
-	"golang.org/x/crypto/ssh/terminal"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh/terminal"
 )
 
 type serverType func(Channel, <-chan *Request, *testing.T)

@@ -16,10 +16,10 @@ Hash Functions SHA-1, SHA-224, SHA-256, SHA-384 and SHA-512 for HMAC. To
 choose, you can pass the `New` functions from the different SHA packages to
 pbkdf2.Key.
 */
-package pbkdf2 // import "golang.org/x/crypto/pbkdf2"
+package pbkdf2 // import "golang.org/x/github.com/benchlab/bench-crypto/pbkdf2"
 
 import (
-	"crypto/hmac"
+	"github.com/benchlab/bench-crypto/hmac"
 	"hash"
 )
 

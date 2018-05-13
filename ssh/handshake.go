@@ -5,7 +5,7 @@
 package ssh
 
 import (
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"errors"
 	"fmt"
 	"io"

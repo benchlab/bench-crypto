@@ -6,7 +6,7 @@ package bn256
 
 import (
 	"bytes"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"math/big"
 	"testing"
 )

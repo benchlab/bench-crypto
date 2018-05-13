@@ -10,9 +10,9 @@ package knownhosts
 import (
 	"bufio"
 	"bytes"
-	"crypto/hmac"
-	"crypto/rand"
-	"crypto/sha1"
+	"github.com/benchlab/bench-crypto/hmac"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/sha1"
 	"encoding/base64"
 	"errors"
 	"fmt"
@@ -21,7 +21,7 @@ import (
 	"os"
 	"strings"
 
-	"golang.org/x/crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
 )
 
 // See the sshd manpage
@@ -469,7 +469,7 @@ func HashHostname(hostname string) string {
 
 	_, err := rand.Read(salt)
 	if err != nil {
-		panic(fmt.Sprintf("crypto/rand failure %v", err))
+		panic(fmt.Sprintf("github.com/benchlab/bench-crypto/rand failure %v", err))
 	}
 
 	hash := hashHost(hostname, salt)

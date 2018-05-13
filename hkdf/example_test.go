@@ -6,10 +6,10 @@ package hkdf_test
 
 import (
 	"bytes"
-	"crypto/rand"
-	"crypto/sha256"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/sha256"
 	"fmt"
-	"golang.org/x/crypto/hkdf"
+	"golang.org/x/github.com/benchlab/bench-crypto/hkdf"
 	"io"
 )
 

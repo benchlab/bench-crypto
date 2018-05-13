@@ -10,10 +10,10 @@
 // strong secret keys.
 //
 // RFC 5869: https://tools.ietf.org/html/rfc5869
-package hkdf // import "golang.org/x/crypto/hkdf"
+package hkdf // import "golang.org/x/github.com/benchlab/bench-crypto/hkdf"
 
 import (
-	"crypto/hmac"
+	"github.com/benchlab/bench-crypto/hmac"
 	"errors"
 	"hash"
 	"io"

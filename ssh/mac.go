@@ -7,9 +7,9 @@ package ssh
 // Message authentication support
 
 import (
-	"crypto/hmac"
-	"crypto/sha1"
-	"crypto/sha256"
+	"github.com/benchlab/bench-crypto/hmac"
+	"github.com/benchlab/bench-crypto/sha1"
+	"github.com/benchlab/bench-crypto/sha256"
 	"hash"
 )
 

@@ -6,11 +6,11 @@ package box
 
 import (
 	"bytes"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"encoding/hex"
 	"testing"
 
-	"golang.org/x/crypto/curve25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/curve25519"
 )
 
 func TestSealOpen(t *testing.T) {

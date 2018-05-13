@@ -7,13 +7,13 @@ package ssh
 import (
 	"bytes"
 	"crypto"
-	"crypto/dsa"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/md5"
-	"crypto/rsa"
-	"crypto/sha256"
-	"crypto/x509"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/md5"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/sha256"
+	"github.com/benchlab/bench-crypto/x509"
 	"encoding/asn1"
 	"encoding/base64"
 	"encoding/hex"
@@ -24,7 +24,7 @@ import (
 	"math/big"
 	"strings"
 
-	"golang.org/x/crypto/ed25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/ed25519"
 )
 
 // These constants represent the algorithm names for key types supported by this
@@ -335,7 +335,7 @@ func parseRSA(in []byte) (out PublicKey, rest []byte, err error) {
 func (r *rsaPublicKey) Marshal() []byte {
 	e := new(big.Int).SetInt64(int64(r.E))
 	// RSA publickey struct layout should match the struct used by
-	// parseRSACert in the x/crypto/ssh/agent package.
+	// parseRSACert in the x/github.com/benchlab/bench-crypto/ssh/agent package.
 	wirekey := struct {
 		Name string
 		E    *big.Int
@@ -407,7 +407,7 @@ func parseDSA(in []byte) (out PublicKey, rest []byte, err error) {
 
 func (k *dsaPublicKey) Marshal() []byte {
 	// DSA publickey struct layout should match the struct used by
-	// parseDSACert in the x/crypto/ssh/agent package.
+	// parseDSACert in the x/github.com/benchlab/bench-crypto/ssh/agent package.
 	w := struct {
 		Name       string
 		P, Q, G, Y *big.Int
@@ -600,7 +600,7 @@ func (k *ecdsaPublicKey) Marshal() []byte {
 	// See RFC 5656, section 3.1.
 	keyBytes := elliptic.Marshal(k.Curve, k.X, k.Y)
 	// ECDSA publickey struct layout should match the struct used by
-	// parseECDSACert in the x/crypto/ssh/agent package.
+	// parseECDSACert in the x/github.com/benchlab/bench-crypto/ssh/agent package.
 	w := struct {
 		Name string
 		ID   string

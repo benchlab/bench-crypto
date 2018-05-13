@@ -7,20 +7,20 @@ package packet
 import (
 	"bytes"
 	"crypto"
-	"crypto/cipher"
-	"crypto/dsa"
-	"crypto/ecdsa"
-	"crypto/rsa"
-	"crypto/sha1"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/sha1"
 	"io"
 	"io/ioutil"
 	"math/big"
 	"strconv"
 	"time"
 
-	"golang.org/x/crypto/openpgp/elgamal"
-	"golang.org/x/crypto/openpgp/errors"
-	"golang.org/x/crypto/openpgp/s2k"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/elgamal"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/s2k"
 )
 
 // PrivateKey represents a possibly encrypted private key. See RFC 4880,

@@ -6,7 +6,7 @@ package chacha20poly1305
 
 import (
 	"bytes"
-	cr "crypto/rand"
+	cr "github.com/benchlab/bench-crypto/rand"
 	"encoding/hex"
 	mr "math/rand"
 	"testing"

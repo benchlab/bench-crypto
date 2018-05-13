@@ -3,10 +3,10 @@
 // license that can be found in the LICENSE file.
 
 // Package chacha20poly1305 implements the ChaCha20-Poly1305 AEAD as specified in RFC 7539.
-package chacha20poly1305 // import "golang.org/x/crypto/chacha20poly1305"
+package chacha20poly1305 // import "golang.org/x/github.com/benchlab/bench-crypto/chacha20poly1305"
 
 import (
-	"crypto/cipher"
+	"github.com/benchlab/bench-crypto/cipher"
 	"encoding/binary"
 	"errors"
 )

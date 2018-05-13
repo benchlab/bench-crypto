@@ -9,14 +9,14 @@
 //
 // References:
 //  [PROTOCOL.agent]: https://tools.ietf.org/html/draft-miller-ssh-agent-00
-package agent // import "golang.org/x/crypto/ssh/agent"
+package agent // import "golang.org/x/github.com/benchlab/bench-crypto/ssh/agent"
 
 import (
 	"bytes"
-	"crypto/dsa"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rsa"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rsa"
 	"encoding/base64"
 	"encoding/binary"
 	"errors"
@@ -25,8 +25,8 @@ import (
 	"math/big"
 	"sync"
 
-	"golang.org/x/crypto/ed25519"
-	"golang.org/x/crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ed25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
 )
 
 // Agent represents the capabilities of an ssh-agent.

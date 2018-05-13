@@ -7,8 +7,8 @@ package packet
 import (
 	"bytes"
 	"crypto"
-	"crypto/dsa"
-	"crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
 	"encoding/asn1"
 	"encoding/binary"
 	"hash"
@@ -17,8 +17,8 @@ import (
 	"strconv"
 	"time"
 
-	"golang.org/x/crypto/openpgp/errors"
-	"golang.org/x/crypto/openpgp/s2k"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/s2k"
 )
 
 const (

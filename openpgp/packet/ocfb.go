@@ -7,7 +7,7 @@
 package packet
 
 import (
-	"crypto/cipher"
+	"github.com/benchlab/bench-crypto/cipher"
 )
 
 type ocfbEncrypter struct {

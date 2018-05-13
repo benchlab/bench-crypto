@@ -6,8 +6,8 @@ package packet
 
 import (
 	"bytes"
-	"crypto/ecdsa"
-	"crypto/elliptic"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
 	"encoding/hex"
 	"math/big"
 	"testing"

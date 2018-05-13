@@ -5,12 +5,12 @@
 package autocert_test
 
 import (
-	"crypto/tls"
+	"github.com/benchlab/bench-crypto/tls"
 	"fmt"
 	"log"
 	"net/http"
 
-	"golang.org/x/crypto/acme/autocert"
+	"golang.org/x/github.com/benchlab/bench-crypto/acme/autocert"
 )
 
 func ExampleNewListener() {

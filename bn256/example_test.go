@@ -5,7 +5,7 @@
 package bn256
 
 import (
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 )
 
 func ExamplePair() {

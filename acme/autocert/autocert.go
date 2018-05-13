@@ -12,13 +12,13 @@ import (
 	"bytes"
 	"context"
 	"crypto"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rand"
-	"crypto/rsa"
-	"crypto/tls"
-	"crypto/x509"
-	"crypto/x509/pkix"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/tls"
+	"github.com/benchlab/bench-crypto/x509"
+	"github.com/benchlab/bench-crypto/x509/pkix"
 	"encoding/pem"
 	"errors"
 	"fmt"
@@ -31,7 +31,7 @@ import (
 	"sync"
 	"time"
 
-	"golang.org/x/crypto/acme"
+	"golang.org/x/github.com/benchlab/bench-crypto/acme"
 )
 
 // createCertRetryAfter is how much time to wait before removing a failed state
@@ -863,7 +863,7 @@ func certRequest(key crypto.Signer, cn string, san ...string) ([]byte, error) {
 // PKCS#1 private keys by default, while OpenSSL 1.0.0 generates PKCS#8 keys.
 // OpenSSL ecparam generates SEC1 EC private keys for ECDSA. We try all three.
 //
-// Inspired by parsePrivateKey in crypto/tls/tls.go.
+// Inspired by parsePrivateKey in github.com/benchlab/bench-crypto/tls/tls.go.
 func parsePrivateKey(der []byte) (crypto.Signer, error) {
 	if key, err := x509.ParsePKCS1PrivateKey(der); err == nil {
 		return key, nil

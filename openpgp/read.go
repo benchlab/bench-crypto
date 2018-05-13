@@ -3,18 +3,18 @@
 // license that can be found in the LICENSE file.
 
 // Package openpgp implements high level operations on OpenPGP messages.
-package openpgp // import "golang.org/x/crypto/openpgp"
+package openpgp // import "golang.org/x/github.com/benchlab/bench-crypto/openpgp"
 
 import (
 	"crypto"
-	_ "crypto/sha256"
+	_ "github.com/benchlab/bench-crypto/sha256"
 	"hash"
 	"io"
 	"strconv"
 
-	"golang.org/x/crypto/openpgp/armor"
-	"golang.org/x/crypto/openpgp/errors"
-	"golang.org/x/crypto/openpgp/packet"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/armor"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/packet"
 )
 
 // SignatureType is the armor type for a PGP signature.

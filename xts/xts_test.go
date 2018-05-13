@@ -6,7 +6,7 @@ package xts
 
 import (
 	"bytes"
-	"crypto/aes"
+	"github.com/benchlab/bench-crypto/aes"
 	"encoding/hex"
 	"testing"
 )

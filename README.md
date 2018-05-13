@@ -4,7 +4,7 @@ This repository holds supplementary Go cryptography libraries that have been rev
 
 ## Download/Install
 
-The easiest way to install is to run `go get -u github.com/benchlab/bench-crypto...`. 
+The easiest way to install is to run `go get -u github.com/benchlab/bench-crypto/...`. 
 
 
 ## LICENSE & ATTRIBUTES

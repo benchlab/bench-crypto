@@ -6,14 +6,14 @@ package agent
 
 import (
 	"crypto"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"fmt"
 	pseudorand "math/rand"
 	"reflect"
 	"strings"
 	"testing"
 
-	"golang.org/x/crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
 )
 
 func TestServer(t *testing.T) {

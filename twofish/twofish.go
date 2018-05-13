@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 // Package twofish implements Bruce Schneier's Twofish encryption algorithm.
-package twofish // import "golang.org/x/crypto/twofish"
+package twofish // import "golang.org/x/github.com/benchlab/bench-crypto/twofish"
 
 // Twofish is defined in https://www.schneier.com/paper-twofish-paper.pdf [TWOFISH]
 
@@ -29,7 +29,7 @@ type Cipher struct {
 type KeySizeError int
 
 func (k KeySizeError) Error() string {
-	return "crypto/twofish: invalid key size " + strconv.Itoa(int(k))
+	return "github.com/benchlab/bench-crypto/twofish: invalid key size " + strconv.Itoa(int(k))
 }
 
 // NewCipher creates and returns a Cipher.
@@ -253,7 +253,7 @@ func h(in, key []byte, offset int) uint32 {
 // Encrypt encrypts a 16-byte chunk from src to dst, which may overlap.
 // Note that for amounts of data larger than a chunk,
 // it is not safe to just call Encrypt on successive chunks;
-// instead, use an encryption mode like CBC (see crypto/cipher/cbc.go).
+// instead, use an encryption mode like CBC (see github.com/benchlab/bench-crypto/cipher/cbc.go).
 func (c *Cipher) Encrypt(dst, src []byte) {
 	S1 := c.s[0]
 	S2 := c.s[1]

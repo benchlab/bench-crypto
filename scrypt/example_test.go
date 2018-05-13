@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"log"
 
-	"golang.org/x/crypto/scrypt"
+	"golang.org/x/github.com/benchlab/bench-crypto/scrypt"
 )
 
 func Example() {

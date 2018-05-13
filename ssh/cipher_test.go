@@ -7,7 +7,7 @@ package ssh
 import (
 	"bytes"
 	"crypto"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"testing"
 )
 

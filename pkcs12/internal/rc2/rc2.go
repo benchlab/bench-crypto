@@ -12,7 +12,7 @@ This code is licensed under the MIT license.
 package rc2
 
 import (
-	"crypto/cipher"
+	"github.com/benchlab/bench-crypto/cipher"
 	"encoding/binary"
 )
 

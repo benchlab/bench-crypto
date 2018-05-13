@@ -5,7 +5,7 @@
 package packet
 
 import (
-	"golang.org/x/crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 	"io"
 )
 

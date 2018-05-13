@@ -6,20 +6,20 @@ package ssh
 
 import (
 	"bytes"
-	"crypto/dsa"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rand"
-	"crypto/rsa"
-	"crypto/x509"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/x509"
 	"encoding/base64"
 	"fmt"
 	"reflect"
 	"strings"
 	"testing"
 
-	"golang.org/x/crypto/ed25519"
-	"golang.org/x/crypto/ssh/testdata"
+	"golang.org/x/github.com/benchlab/bench-crypto/ed25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh/testdata"
 )
 
 func rawKey(pub PublicKey) interface{} {

@@ -5,11 +5,11 @@
 package ssh
 
 import (
-	"crypto/aes"
-	"crypto/cipher"
-	"crypto/des"
-	"crypto/rc4"
-	"crypto/subtle"
+	"github.com/benchlab/bench-crypto/aes"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/des"
+	"github.com/benchlab/bench-crypto/rc4"
+	"github.com/benchlab/bench-crypto/subtle"
 	"encoding/binary"
 	"errors"
 	"fmt"
@@ -18,8 +18,8 @@ import (
 	"io/ioutil"
 	"math/bits"
 
-	"golang.org/x/crypto/internal/chacha20"
-	"golang.org/x/crypto/poly1305"
+	"golang.org/x/github.com/benchlab/bench-crypto/internal/chacha20"
+	"golang.org/x/github.com/benchlab/bench-crypto/poly1305"
 )
 
 const (

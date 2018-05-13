@@ -16,8 +16,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"golang.org/x/crypto/ssh"
-	"golang.org/x/crypto/ssh/terminal"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh/terminal"
 )
 
 func ExampleNewServerConn() {
@@ -222,7 +222,7 @@ func ExamplePublicKeys() {
 	// A public key may be used to authenticate against the remote
 	// server by using an unencrypted PEM-encoded private key file.
 	//
-	// If you have an encrypted private key, the crypto/x509 package
+	// If you have an encrypted private key, the github.com/benchlab/bench-crypto/x509 package
 	// can be used to decrypt it.
 	key, err := ioutil.ReadFile("/home/user/.ssh/id_rsa")
 	if err != nil {

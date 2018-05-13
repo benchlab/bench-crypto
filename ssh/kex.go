@@ -6,15 +6,15 @@ package ssh
 
 import (
 	"crypto"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rand"
-	"crypto/subtle"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/subtle"
 	"errors"
 	"io"
 	"math/big"
 
-	"golang.org/x/crypto/curve25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/curve25519"
 )
 
 const (

@@ -6,15 +6,15 @@ package openpgp
 
 import (
 	"bytes"
-	_ "crypto/sha512"
+	_ "github.com/benchlab/bench-crypto/sha512"
 	"encoding/hex"
 	"io"
 	"io/ioutil"
 	"strings"
 	"testing"
 
-	"golang.org/x/crypto/openpgp/armor"
-	"golang.org/x/crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/armor"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 )
 
 func readerFromHex(s string) io.Reader {

@@ -1,11 +1,11 @@
 package box_test
 
 import (
-	crypto_rand "crypto/rand" // Custom so it's clear which rand we're using.
+	crypto_rand "github.com/benchlab/bench-crypto/rand" // Custom so it's clear which rand we're using.
 	"fmt"
 	"io"
 
-	"golang.org/x/crypto/nacl/box"
+	"golang.org/x/github.com/benchlab/bench-crypto/nacl/box"
 )
 
 func Example() {

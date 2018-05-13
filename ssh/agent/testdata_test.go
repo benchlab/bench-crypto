@@ -9,11 +9,11 @@
 package agent
 
 import (
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"fmt"
 
-	"golang.org/x/crypto/ssh"
-	"golang.org/x/crypto/ssh/testdata"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh/testdata"
 )
 
 var (

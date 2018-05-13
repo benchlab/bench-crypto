@@ -15,13 +15,13 @@ package ed25519
 import (
 	"bytes"
 	"crypto"
-	cryptorand "crypto/rand"
-	"crypto/sha512"
+	cryptorand "github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/sha512"
 	"errors"
 	"io"
 	"strconv"
 
-	"golang.org/x/crypto/ed25519/internal/edwards25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/ed25519/internal/edwards25519"
 )
 
 const (
@@ -60,7 +60,7 @@ func (priv PrivateKey) Sign(rand io.Reader, message []byte, opts crypto.SignerOp
 }
 
 // GenerateKey generates a public/private key pair using entropy from rand.
-// If rand is nil, crypto/rand.Reader will be used.
+// If rand is nil, github.com/benchlab/bench-crypto/rand.Reader will be used.
 func GenerateKey(rand io.Reader) (publicKey PublicKey, privateKey PrivateKey, err error) {
 	if rand == nil {
 		rand = cryptorand.Reader

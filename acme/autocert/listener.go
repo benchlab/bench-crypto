@@ -5,7 +5,7 @@
 package autocert
 
 import (
-	"crypto/tls"
+	"github.com/benchlab/bench-crypto/tls"
 	"log"
 	"net"
 	"os"

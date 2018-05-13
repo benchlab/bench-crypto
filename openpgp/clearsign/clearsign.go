@@ -7,7 +7,7 @@
 //
 // Clearsigned messages are cryptographically signed, but the contents of the
 // message are kept in plaintext so that it can be read without special tools.
-package clearsign // import "golang.org/x/crypto/openpgp/clearsign"
+package clearsign // import "golang.org/x/github.com/benchlab/bench-crypto/openpgp/clearsign"
 
 import (
 	"bufio"
@@ -18,9 +18,9 @@ import (
 	"net/textproto"
 	"strconv"
 
-	"golang.org/x/crypto/openpgp/armor"
-	"golang.org/x/crypto/openpgp/errors"
-	"golang.org/x/crypto/openpgp/packet"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/armor"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/packet"
 )
 
 // A Chunk represents a clearsigned message. A signature on a Chunk can

@@ -7,13 +7,13 @@ package packet
 import (
 	"bytes"
 	"crypto"
-	"crypto/dsa"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rsa"
-	"crypto/sha1"
-	_ "crypto/sha256"
-	_ "crypto/sha512"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/sha1"
+	_ "github.com/benchlab/bench-crypto/sha256"
+	_ "github.com/benchlab/bench-crypto/sha512"
 	"encoding/binary"
 	"fmt"
 	"hash"
@@ -22,8 +22,8 @@ import (
 	"strconv"
 	"time"
 
-	"golang.org/x/crypto/openpgp/elgamal"
-	"golang.org/x/crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/elgamal"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 )
 
 var (

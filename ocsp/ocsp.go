@@ -5,19 +5,19 @@
 // Package ocsp parses OCSP responses as specified in RFC 2560. OCSP responses
 // are signed messages attesting to the validity of a certificate for a small
 // period of time. This is used to manage revocation for X.509 certificates.
-package ocsp // import "golang.org/x/crypto/ocsp"
+package ocsp // import "golang.org/x/github.com/benchlab/bench-crypto/ocsp"
 
 import (
 	"crypto"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rand"
-	"crypto/rsa"
-	_ "crypto/sha1"
-	_ "crypto/sha256"
-	_ "crypto/sha512"
-	"crypto/x509"
-	"crypto/x509/pkix"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rand"
+	"github.com/benchlab/bench-crypto/rsa"
+	_ "github.com/benchlab/bench-crypto/sha1"
+	_ "github.com/benchlab/bench-crypto/sha256"
+	_ "github.com/benchlab/bench-crypto/sha512"
+	"github.com/benchlab/bench-crypto/x509"
+	"github.com/benchlab/bench-crypto/x509/pkix"
 	"encoding/asn1"
 	"errors"
 	"fmt"
@@ -160,7 +160,7 @@ var hashOIDs = map[crypto.Hash]asn1.ObjectIdentifier{
 	crypto.SHA512: asn1.ObjectIdentifier([]int{2, 16, 840, 1, 101, 3, 4, 2, 3}),
 }
 
-// TODO(rlb): This is also from crypto/x509, so same comment as AGL's below
+// TODO(rlb): This is also from github.com/benchlab/bench-crypto/x509, so same comment as AGL's below
 var signatureAlgorithmDetails = []struct {
 	algo       x509.SignatureAlgorithm
 	oid        asn1.ObjectIdentifier
@@ -181,7 +181,7 @@ var signatureAlgorithmDetails = []struct {
 	{x509.ECDSAWithSHA512, oidSignatureECDSAWithSHA512, x509.ECDSA, crypto.SHA512},
 }
 
-// TODO(rlb): This is also from crypto/x509, so same comment as AGL's below
+// TODO(rlb): This is also from github.com/benchlab/bench-crypto/x509, so same comment as AGL's below
 func signingParamsForPublicKey(pub interface{}, requestedSigAlgo x509.SignatureAlgorithm) (hashFunc crypto.Hash, sigAlgo pkix.AlgorithmIdentifier, err error) {
 	var pubType x509.PublicKeyAlgorithm
 
@@ -247,8 +247,8 @@ func signingParamsForPublicKey(pub interface{}, requestedSigAlgo x509.SignatureA
 	return
 }
 
-// TODO(agl): this is taken from crypto/x509 and so should probably be exported
-// from crypto/x509 or crypto/x509/pkix.
+// TODO(agl): this is taken from github.com/benchlab/bench-crypto/x509 and so should probably be exported
+// from github.com/benchlab/bench-crypto/x509 or github.com/benchlab/bench-crypto/x509/pkix.
 func getSignatureAlgorithmFromOID(oid asn1.ObjectIdentifier) x509.SignatureAlgorithm {
 	for _, details := range signatureAlgorithmDetails {
 		if oid.Equal(details.oid) {
@@ -258,7 +258,7 @@ func getSignatureAlgorithmFromOID(oid asn1.ObjectIdentifier) x509.SignatureAlgor
 	return x509.UnknownSignatureAlgorithm
 }
 
-// TODO(rlb): This is not taken from crypto/x509, but it's of the same general form.
+// TODO(rlb): This is not taken from github.com/benchlab/bench-crypto/x509, but it's of the same general form.
 func getHashAlgorithmFromOID(target asn1.ObjectIdentifier) crypto.Hash {
 	for hash, oid := range hashOIDs {
 		if oid.Equal(target) {

@@ -5,10 +5,10 @@
 package agent
 
 import (
-	"crypto/dsa"
-	"crypto/ecdsa"
-	"crypto/elliptic"
-	"crypto/rsa"
+	"github.com/benchlab/bench-crypto/dsa"
+	"github.com/benchlab/bench-crypto/ecdsa"
+	"github.com/benchlab/bench-crypto/elliptic"
+	"github.com/benchlab/bench-crypto/rsa"
 	"encoding/binary"
 	"errors"
 	"fmt"
@@ -16,8 +16,8 @@ import (
 	"log"
 	"math/big"
 
-	"golang.org/x/crypto/ed25519"
-	"golang.org/x/crypto/ssh"
+	"golang.org/x/github.com/benchlab/bench-crypto/ed25519"
+	"golang.org/x/github.com/benchlab/bench-crypto/ssh"
 )
 
 // Server wraps an Agent and uses it to implement the agent side of

@@ -6,8 +6,8 @@ package packet
 
 import (
 	"crypto"
-	"crypto/md5"
-	"crypto/rsa"
+	"github.com/benchlab/bench-crypto/md5"
+	"github.com/benchlab/bench-crypto/rsa"
 	"encoding/binary"
 	"fmt"
 	"hash"
@@ -16,7 +16,7 @@ import (
 	"strconv"
 	"time"
 
-	"golang.org/x/crypto/openpgp/errors"
+	"golang.org/x/github.com/benchlab/bench-crypto/openpgp/errors"
 )
 
 // PublicKeyV3 represents older, version 3 public keys. These keys are less secure and

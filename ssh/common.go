@@ -6,15 +6,15 @@ package ssh
 
 import (
 	"crypto"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"fmt"
 	"io"
 	"math"
 	"sync"
 
-	_ "crypto/sha1"
-	_ "crypto/sha256"
-	_ "crypto/sha512"
+	_ "github.com/benchlab/bench-crypto/sha1"
+	_ "github.com/benchlab/bench-crypto/sha256"
+	_ "github.com/benchlab/bench-crypto/sha512"
 )
 
 // These are string constants in the SSH protocol.
@@ -192,7 +192,7 @@ const minRekeyThreshold uint64 = 256
 type Config struct {
 	// Rand provides the source of entropy for cryptographic
 	// primitives. If Rand is nil, the cryptographic random reader
-	// in package crypto/rand will be used.
+	// in package github.com/benchlab/bench-crypto/rand will be used.
 	Rand io.Reader
 
 	// The maximum number of bytes sent or received after which a

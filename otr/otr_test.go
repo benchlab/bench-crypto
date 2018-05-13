@@ -7,7 +7,7 @@ package otr
 import (
 	"bufio"
 	"bytes"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/rand"
 	"encoding/hex"
 	"math/big"
 	"os"

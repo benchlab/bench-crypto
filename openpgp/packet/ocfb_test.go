@@ -6,8 +6,8 @@ package packet
 
 import (
 	"bytes"
-	"crypto/aes"
-	"crypto/rand"
+	"github.com/benchlab/bench-crypto/aes"
+	"github.com/benchlab/bench-crypto/rand"
 	"testing"
 )
 

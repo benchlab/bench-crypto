@@ -5,8 +5,8 @@
 package pkcs12
 
 import (
-	"crypto/rsa"
-	"crypto/tls"
+	"github.com/benchlab/bench-crypto/rsa"
+	"github.com/benchlab/bench-crypto/tls"
 	"encoding/base64"
 	"encoding/pem"
 	"testing"
