@@ -5,11 +5,12 @@
 package sha256_test
 
 import (
-	"crypto/sha256"
 	"fmt"
 	"io"
 	"log"
 	"os"
+
+	"github.com/benchlab/bench-crypto/sha256"
 )
 
 func ExampleSum256() {

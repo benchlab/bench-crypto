@@ -6,8 +6,9 @@ package rand_test
 
 import (
 	"bytes"
-	"crypto/rand"
 	"fmt"
+
+	"github.com/benchlab/bench-crypto/rand"
 )
 
 // This example reads 10 cryptographically secure pseudorandom numbers from

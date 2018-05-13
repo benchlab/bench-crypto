@@ -6,14 +6,15 @@ package cipher_test
 
 import (
 	"bytes"
-	"crypto/aes"
-	"crypto/cipher"
-	"crypto/rand"
 	"encoding/hex"
 	"errors"
 	"io"
 	"reflect"
 	"testing"
+
+	"github.com/benchlab/bench-crypto/aes"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/rand"
 )
 
 var aesGCMTests = []struct {

@@ -5,8 +5,9 @@
 package cipher
 
 import (
-	"crypto/subtle"
 	"errors"
+
+	"github.com/benchlab/bench-crypto/subtle"
 )
 
 // AEAD is a cipher mode providing authenticated encryption with associated

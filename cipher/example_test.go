@@ -5,13 +5,14 @@
 package cipher_test
 
 import (
-	"crypto/aes"
-	"crypto/cipher"
-	"crypto/rand"
 	"encoding/hex"
 	"fmt"
 	"io"
 	"os"
+
+	"github.com/benchlab/bench-crypto/aes"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/rand"
 )
 
 func ExampleNewGCM_encrypt() {

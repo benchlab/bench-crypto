@@ -8,12 +8,13 @@ package sha256
 
 import (
 	"bytes"
-	"crypto/rand"
 	"encoding"
 	"fmt"
 	"hash"
 	"io"
 	"testing"
+
+	"github.com/benchlab/bench-crypto/rand"
 )
 
 type sha256Test struct {

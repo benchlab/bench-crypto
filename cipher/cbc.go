@@ -54,10 +54,10 @@ func (x *cbcEncrypter) ChunkSize() int { return x.chunkSize }
 
 func (x *cbcEncrypter) CryptChunks(dst, src []byte) {
 	if len(src)%x.chunkSize != 0 {
-		panic("crypto/cipher: input not full chunks")
+		panic("github.com/benchlab/bench-crypto/cipher: input not full chunks")
 	}
 	if len(dst) < len(src) {
-		panic("crypto/cipher: output smaller than input")
+		panic("github.com/benchlab/bench-crypto/cipher: output smaller than input")
 	}
 
 	iv := x.iv
@@ -111,10 +111,10 @@ func (x *cbcDecrypter) ChunkSize() int { return x.chunkSize }
 
 func (x *cbcDecrypter) CryptChunks(dst, src []byte) {
 	if len(src)%x.chunkSize != 0 {
-		panic("crypto/cipher: input not full chunks")
+		panic("github.com/benchlab/bench-crypto/cipher: input not full chunks")
 	}
 	if len(dst) < len(src) {
-		panic("crypto/cipher: output smaller than input")
+		panic("github.com/benchlab/bench-crypto/cipher: output smaller than input")
 	}
 	if len(src) == 0 {
 		return

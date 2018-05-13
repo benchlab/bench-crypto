@@ -6,11 +6,12 @@ package cipher_test
 
 import (
 	"bytes"
-	"crypto/aes"
-	"crypto/cipher"
-	"crypto/rand"
 	"encoding/hex"
 	"testing"
+
+	"github.com/benchlab/bench-crypto/aes"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/rand"
 )
 
 // cfbTests contains the test vectors from

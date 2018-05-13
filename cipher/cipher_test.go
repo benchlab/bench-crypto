@@ -6,10 +6,11 @@ package cipher_test
 
 import (
 	"bytes"
-	"crypto/aes"
-	"crypto/cipher"
-	"crypto/des"
 	"testing"
+
+	"github.com/benchlab/bench-crypto/aes"
+	"github.com/benchlab/bench-crypto/cipher"
+	"github.com/benchlab/bench-crypto/des"
 )
 
 func TestCryptChunks(t *testing.T) {
@@ -17,12 +18,12 @@ func TestCryptChunks(t *testing.T) {
 	chunk, _ := aes.NewCipher(buf)
 
 	mode := cipher.NewCBCDecrypter(chunk, buf)
-	mustPanic(t, "crypto/cipher: input not full chunks", func() { mode.CryptChunks(buf, buf[:3]) })
-	mustPanic(t, "crypto/cipher: output smaller than input", func() { mode.CryptChunks(buf[:3], buf) })
+	mustPanic(t, "github.com/benchlab/bench-crypto/cipher: input not full chunks", func() { mode.CryptChunks(buf, buf[:3]) })
+	mustPanic(t, "github.com/benchlab/bench-crypto/cipher: output smaller than input", func() { mode.CryptChunks(buf[:3], buf) })
 
 	mode = cipher.NewCBCEncrypter(chunk, buf)
-	mustPanic(t, "crypto/cipher: input not full chunks", func() { mode.CryptChunks(buf, buf[:3]) })
-	mustPanic(t, "crypto/cipher: output smaller than input", func() { mode.CryptChunks(buf[:3], buf) })
+	mustPanic(t, "github.com/benchlab/bench-crypto/cipher: input not full chunks", func() { mode.CryptChunks(buf, buf[:3]) })
+	mustPanic(t, "github.com/benchlab/bench-crypto/cipher: output smaller than input", func() { mode.CryptChunks(buf[:3], buf) })
 }
 
 func mustPanic(t *testing.T, msg string, f func()) {

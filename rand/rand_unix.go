@@ -11,13 +11,14 @@ package rand
 
 import (
 	"bufio"
-	"crypto/aes"
-	"crypto/cipher"
 	"io"
 	"os"
 	"runtime"
 	"sync"
 	"time"
+
+	"github.com/benchlab/bench-crypto/aes"
+	"github.com/benchlab/bench-crypto/cipher"
 )
 
 const urandomDevice = "/dev/urandom"

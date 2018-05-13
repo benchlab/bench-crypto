@@ -6,8 +6,9 @@ package cipher_test
 
 import (
 	"bytes"
-	"crypto/cipher"
 	"testing"
+
+	"github.com/benchlab/bench-crypto/cipher"
 )
 
 type noopChunk int
